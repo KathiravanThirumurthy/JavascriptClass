@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f2f2f2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+
+/* Main container */
+
+.container {
+    width: 500px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Heading */
+
+h1 {
+    text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+
+/* Input + Add button */
+
+.input-area {
+    display: flex;
+
+    gap: 10px;
+}
+
+#taskInput {
+    flex: 1;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    border: 2px solid #ccc;
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+
+/* Input when invalid */
+
+#taskInput.invalid {
+    border-color: red;
+}
+
+
+/* Input when valid */
+
+#taskInput.valid {
+    border-color: green;
+}
+
+
+/* Add button */
+
+.input-area button {
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #333;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.input-area button:hover {
+    background: #555;
+}
+
+
+/* Validation message */
+
+#message {
+    margin: 8px 0 0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+#message.error {
+    color: red;
+}
+
+#message.success {
+    color: green;
+}
+
+
+/* Individual task */
+
+.task {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background: #f7f7f7;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+}
+
+
+/* Task text */
+
+.task-text {
+    flex: 1;
+
+    font-size: 16px;
+}
+
+
+/* Completed task */
+
+.task.completed .task-text {
+    text-decoration: line-through;
+
+    color: #888;
+}
+
+
+/* Buttons */
+
+.task-buttons {
+    display: flex;
+
+    gap: 5px;
+}
+
+.task-buttons button {
+    padding: 7px 10px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+
+/* Done */
+
+.done-btn {
+    background: green;
+
+    color: white;
+}
+
+
+/* Remove */
+
+.remove-btn {
+    background: red;
+
+    color: white;
+}
+
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    .input-area button {
+        width: 100%;
+    }
+
+    .task {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+}
