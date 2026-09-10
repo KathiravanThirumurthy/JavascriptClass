@@ -1,6 +1,7 @@
 console.log("Day 19");
 const title = document.querySelector("#title");
 const changeBtn = document.querySelector("#changeBtn");
+console.log(changeBtn);
 
 changeBtn.addEventListener("click", () => {
     title.innerText = "Welcome to JavaScript!";

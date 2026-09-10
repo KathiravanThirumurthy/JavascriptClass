@@ -17,6 +17,7 @@ User clicked
 User moved mouse
 User pressed a key
 User entered text
+
 Javascript can listen to the events and execute code
 
 ###
