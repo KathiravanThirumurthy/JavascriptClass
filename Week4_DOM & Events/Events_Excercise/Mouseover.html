@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover to Change Size</title>
+  <style>
+    #resizeDiv {
+      width: 200px;
+      height: 100px;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+  <div id="resizeDiv">Hover over me</div>
+
+  <script>
+    const resizeDiv = document.getElementById("resizeDiv");
+
+    resizeDiv.addEventListener("mouseover", function() {
+      this.style.width = "300px";
+      this.style.height = "150px";
+    });
+
+    resizeDiv.addEventListener("mouseout", function() {
+      this.style.width = "200px";
+      this.style.height = "100px";
+    });
+  </script>
+</body>
+</html>
+
+Anonymus functional
+Named functions

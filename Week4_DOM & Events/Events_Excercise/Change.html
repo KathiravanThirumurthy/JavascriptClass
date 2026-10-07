@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Event</title>
+</head>
+<body>
+  <select id="dropdown">
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="orange">Orange</option>
+  </select>
+
+  <script>
+    document.getElementById("dropdown").addEventListener("change", function() {
+      alert("You selected: " + this.value);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Menu Event</title>
+</head>
+<body>
+  <div id="rightClickDiv" style="width:200px;height:100px;background-color:lightcoral;">Right-click here</div>
+
+  <script>
+    document.getElementById("rightClickDiv").addEventListener("contextmenu", function(event) {
+      event.preventDefault(); // Prevents the default right-click menu
+      alert("Right-clicked on the div!");
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+
+The contextmenu event occurs when the user right-clicks to open the context menu (browser's right-click menu).
+
+  -->

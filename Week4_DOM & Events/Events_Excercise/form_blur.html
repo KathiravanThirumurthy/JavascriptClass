@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation with Focus and Blur Events</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+    .form-field {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Validation (Focus and Blur)</h2>
+  <form id="validationForm">
+    <div class="form-field">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name"><br>
+      <span class="error" id="nameError"></span>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email"><br>
+      <span class="error" id="emailError"></span>
+    </div>
+
+    <div class="form-field">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br>
+      <span class="error" id="passwordError"></span>
+    </div>
+
+    <div class="form-field">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone"><br>
+      <span class="error" id="phoneError"></span>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("validationForm").addEventListener("submit", function(event) {
+      // Prevent form submission
+      event.preventDefault(); 
+      validateOnSubmit();
+    });
+
+    // Adding focus and blur event listeners to the fields
+    const formFields = ["name", "email", "password", "phone"];
+
+    formFields.forEach((field) => {
+      const inputElement = document.getElementById(field);
+
+      // Focus event: Clear the error message on focus
+      inputElement.addEventListener("focus", function() {
+        document.getElementById(`${field}Error`).innerText = "";
+      });
+
+      // Blur event: Validate the field on blur (when leaving the field)
+      inputElement.addEventListener("blur", function() {
+        validateField(field);
+      });
+    });
+
+    // Validate the form fields on submit
+    function validateOnSubmit() {
+      formFields.forEach((field) => {
+        validateField(field);
+      });
+    }
+
+    // Validate each field individually
+    function validateField(field) {
+      const value = document.getElementById(field).value;
+      let error = "";
+
+      switch(field) {
+        case "name":
+          if (value.trim() === "") {
+            error = "Name is required.";
+          }
+          break;
+        case "email":
+          if (value.trim() === "") {
+            error = "Email is required.";
+          } else if (!validateEmail(value)) {
+            error = "Please enter a valid email address.";
+          }
+          break;
+        case "password":
+          if (value.trim() === "") {
+            error = "Password is required.";
+          } else if (value.length < 6) {
+            error = "Password must be at least 6 characters long.";
+          }
+          break;
+        case "phone":
+          if (value.trim() === "") {
+            error = "Phone number is required.";
+          } else if (!validatePhoneNumber(value)) {
+            error = "Please enter a valid 10-digit phone number.";
+          }
+          break;
+      }
+
+      document.getElementById(`${field}Error`).innerText = error;
+    }
+
+    // Email validation function
+    function validateEmail(email) {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email);
+    }
+
+    // Phone number validation function
+    function validatePhoneNumber(phone) {
+      const phonePattern = /^\d{10}$/; // 10-digit phone number
+      return phonePattern.test(phone);
+    }
+  </script>
+</body>
+</html>
+
+
+<!--
+
+^[^\s@]+: The email starts with one or more characters that aren’t spaces or @.
+@: Then there’s an @ symbol.
+[^\s@]+: After that, there’s another set of characters (for the domain) that aren’t spaces or @.
+\.: Then there’s a dot (.).
+[^\s@]+: Finally, there’s one or more characters (like .com, .org, etc.) after the dot.
+$: The email must end after the last valid part (like .com).
+
+-- >
+
+<!--
+
+^:
+
+This is called the caret symbol.
+It means "start of the string". So, we’re saying the email should start from here, and whatever comes after it needs to follow the pattern.
+[^\s@]+:
+
+Let’s break this into smaller pieces:
+[ ]: This is called a character set. It defines a group of characters that are allowed or not allowed.
+^\s@: This means "anything except spaces (\s) and the @ symbol." The ^ here inside the brackets means "not."
++: This means "one or more of the characters we defined." So, we need at least one character, but we can have more.
+Altogether, this part matches the first part of the email (before the @), like example in example@domain.com. It allows any character except spaces and @.
+@:
+
+This matches the @ symbol, which is mandatory in an email. It simply ensures that an @ appears in the email at this point.
+[^\s@]+:
+
+This is the same as the first [^\s@]+, but this time it matches the domain name part after the @ symbol, like domain in example@domain.com. It ensures no spaces or @ symbols are present here, just valid domain characters.
+.:
+
+This part looks for a dot (.) after the domain name, like the one in domain.com.
+The backslash \ is used to escape the dot, because in regular expressions, a dot normally means "any character." But we want to match an actual dot (.), so we escape it with \..
+[^\s@]+:
+
+Again, this matches one or more characters after the dot, like com in domain.com. It ensures there are no spaces or @ symbols after the dot, typically for the top-level domain (like .com, .org, .net).
+
+
+$:
+
+This symbol means "end of the string." It makes sure that the email ends after the top-level domain (e.g., .com). No extra characters are allowed after this.
+
+-->

@@ -1,35 +1,23 @@
 
 console.log("DAy 7");
-/*
-let mark=60;
-if (mark >= 50) {
-    console.log("Pass");
-} else {
-    console.log("Fail");
-}*/
-/*
-2.if
-let age = 20;
 
-if (age >= 18) {
+// if Condtion
+let stuage = 20;
+
+if (stuage >= 18) {
     console.log("Eligible");
 }
 
-*/
-/*
-3.if..else
-
-let age = 16;
-
-if (age >= 18) {
-    console.log("Adult");
+// if ..else
+let submark=60;
+if (submark >= 50) {
+    console.log("Pass");
 } else {
-    console.log("Minor");
+    console.log("Fail");
 }
-*/
 
-/*
-4.else if
+// else if
+
 let mark = 75;
 
 if (mark >= 90) {
@@ -42,22 +30,27 @@ if (mark >= 90) {
     console.log("Fail");
 }
 
-*/
-/*
 
-5.Multiple Condition 
-let age = 20;
+
+
+// Multiple Condition 
+let voterage = 20;
 let hasID = true;
 
-if (age >= 18 && hasID) {
+if (voterage >= 18 && hasID) {
     console.log("Entry allowed");
+}else
+{
+    console.log("No Entries");
 }
 
 
-*/
-/*
+
 // Age Category program
 let age = Number(prompt("Enter your age:"));
+
+console.log(typeof(age));
+
 
 if (age >= 0 && age <= 12) {
     console.log("Child");
@@ -74,7 +67,7 @@ else if (age >= 60) {
 else {
     console.log("Invalid age");
 }
-*/
+
 
 /* 
 // Grade Calculator

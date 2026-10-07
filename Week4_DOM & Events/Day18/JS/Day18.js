@@ -27,6 +27,22 @@ const students = ["Arun", "Priya", "Kumar"];
 
 const studentList1 = document.querySelector("#studentList");
 
+/*
+let fruits = ["Apple", "Banana", "Mango", "Orange"];
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+
+fruits.forEach((fruit) => {
+    console.log(fruit);
+});
+
+getting index and value
+
+fruits.forEach((fruit, index) => {
+    console.log(index, fruit);
+});
+*/
 students.forEach((studentName) => {
     const student = document.createElement("li");
 

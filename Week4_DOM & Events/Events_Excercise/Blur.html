@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blur Event</title>
+</head>
+<body>
+  <input type="text" id="nameInput" placeholder="Enter your name">
+
+  <script>
+    document.getElementById("nameInput").addEventListener("blur", function(e) {
+    	console.log(e);
+    	//console.log(e.type);
+      alert("You left the name input field!");
+    });
+  </script>
+
+</body>
+</html>
+
+<!-- 
+
+The blur event occurs when an element loses focus, typically when a user moves away from an input field.
+
+-->

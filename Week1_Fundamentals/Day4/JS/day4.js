@@ -11,6 +11,8 @@ console.log(a % b);
 let score = 10;
 score += 5;
 
+
+
 //Logical Operators
 let age = 20;
 let hasID = true;
@@ -36,3 +38,4 @@ console.log("Addition:", num1 + num2);
 console.log("Subtraction:", num1 - num2);
 console.log("Multiplication:", num1 * num2);
 console.log("Division:", num1 / num2);
+

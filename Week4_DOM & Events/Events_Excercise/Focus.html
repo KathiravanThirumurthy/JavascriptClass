@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Event</title>
+</head>
+<body>
+  <input type="text" id="emailInput" placeholder="Enter your email">
+
+  <script>
+    document.getElementById("emailInput").addEventListener("focus", function() {
+      this.style.backgroundColor = "lightyellow";
+
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+	The focus event occurs when an element gains focus, such as when the user clicks into a text field.
+-->

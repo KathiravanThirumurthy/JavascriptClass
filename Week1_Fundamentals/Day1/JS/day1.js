@@ -1,4 +1,6 @@
 
+
+
 // output statement
 console.log("Hello Javascript");
 
@@ -104,13 +106,16 @@ Final Amount
 
 
 */
-//declaration statement
+
+
+// declaration statement
 let salary;
-//assignment statement
-salary=1000;
+// assignment statement
+salary=2000;
+let name="farazana";
+console.log("Welcome");
+console.log(salary);
+console.log("The saalry is :" + salary);
+salary=5000;
+console.log(`The Salary is ${salary}`)
 
-
-let a=10;
-let b=20;
-let c=a-b;
-console.log(`The sum is ${c}`)

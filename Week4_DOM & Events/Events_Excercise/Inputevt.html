@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Event</title>
+</head>
+<body>
+  <input type="text" id="liveInput" placeholder="Type something...">
+
+  <script>
+    document.getElementById("liveInput").addEventListener("input", function() {
+      console.log("Current value: " + this.value);
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+The input event occurs when the value of an <input>, <textarea>, or <select> element is changed. Unlike change, it triggers immediately after each input change.
+-->
